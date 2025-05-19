@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valore Alshrouk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="logo">
+    <img src="Materials/valore_logo.png" alt="Valore Logo">
+  </div>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>امتلك وحدة أحلامك</h1>
+      <h2>بسعر الطرح!</h2>
+      <p>سجل اهتمامك واحصل على كافة التفاصيل</p>
+      <button onclick="openPopup()">سجل الآن</button>
+
+      <section class="video-section">
+        <h2 class="video-title">تفاصيل المشروع</h2>
+        <div class="video-wrapper">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/M8bKEou2Fbs?si=s_5Fw3pO7zxT6Wk3&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <div class="carousel">
+        <div class="arrow left" onclick="moveLeft()">&#10094;</div>
+
+        <img src="Materials/IMG-1.jpg">
+        <img src="Materials/IMG-3.jpg">
+        <img src="Materials/IMG-5.jpg">
+        <img src="Materials/IMG-6.jpg">
+        <img src="Materials/IMG-7.jpg">
+
+        <div class="arrow right" onclick="moveRight()">&#10095;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-form" id="popup">
+    <div class="form-container">
+      <span class="close-text" onclick="closePopup()">&times;</span>
+      <h2>سجل بياناتك</h2>
+      <form action="https://formspree.io/f/xgvkenwj" method="POST">
+        <input type="text" name="name" placeholder="الاسم الكامل" required>
+        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <select name="unit_type" required>
+          <option value="">اختر نوع الوحدة</option>
+          <option value="1 Room">غرفة</option>
+          <option value="2 Room">غرفتين</option>
+          <option value="3 Room">3 غرف</option>
+        </select>
+        <button type="submit">إرسال</button>
+      </form>
+    </div>
+  </div>
+
+  <a class="whatsapp-button" href="https://wa.me/+201016761777" target="_blank" rel="noopener">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب">
+  </a>
+
+  <script>
+    function openPopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'flex';
+      setTimeout(() => {
+        popup.classList.add('show');
+      }, 10);
+    }
+  
+    function closePopup() {
+      const popup = document.getElementById('popup');
+      popup.classList.remove('show');
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 400);
+    }
+  
+    const images = document.querySelectorAll('.carousel img');
+    let currentIndex = Math.floor(images.length / 2); // الصورة اللي في النص
+  
+    function updateCarousel(direction = '') {
+  images.forEach((img, index) => {
+    img.classList.remove('active', 'slide-left', 'slide-right');
+    if (index === currentIndex) {
+      img.classList.add('active');
+      if (direction === 'right') {
+        img.classList.add('slide-right');
+      } else if (direction === 'left') {
+        img.classList.add('slide-left');
+      }
+    }
+  });
+}
+
+  
+function moveLeft() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateCarousel('left');
+}
+
+function moveRight() {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateCarousel('right');
+}
+  
+    // تشغيل أولي
+    updateCarousel();
+  
+    // تحريك تلقائي كل 4 ثواني
+    // setInterval(() => {
+    //   moveRight();
+    // }, 10000);
+  </script>
+  <section class="bottom-form">
+    <h2>سجل الآن</h2>
+    <div class="bottom-content">
+      <form action="https://formspree.io/f/xgvkenwj" method="POST">
+        <input type="text" name="name" placeholder="الاسم الكامل" required>
+        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+       
+        </select>
+        <button type="submit">إرسال</button>
+      </form>
+  
+      <div class="map-wrapper">
+        <img src="Materials//Location.jpg" alt="خريطة المشروع" />
+      </div>
+      
+    </div>
+  </section>
+  
+  
+</body>
+</html>
