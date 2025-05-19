@@ -20,7 +20,7 @@ body {
 }
 
 .hero {
-  background: url('Materials/BackGround.jpg') no-repeat center center/cover;
+  background: url('BackGround.jpg') no-repeat center center/cover;
   height: 250vh;
   display: flex;
   align-items: center;
