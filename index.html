@@ -6,22 +6,16 @@
   <title>Valore Alshrouk</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <head>
-    <meta charset="UTF-8">
-    <title>Aljar British District</title>
-
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Aljar British District - Valore Alshrouk" />
-    <meta property="og:description" content="Discover the premium British-style living in New Cairo." />
-    <meta property="og:image" content="https://opulencedeer.github.io/Aljar_British_District/IMG-8.jpg" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://opulencedeer.github.io/Aljar_British_District/" />
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Aljar British District - Valore Alshrouk" />
+  <meta property="og:description" content="Discover the premium British-style living in New Cairo." />
+  <meta property="og:image" content="https://opulencedeer.github.io/Aljar_British_District/IMG-8.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://opulencedeer.github.io/Aljar_British_District/" />
 </head>
 
-
-</head>
 <body>
   <div class="logo">
     <img src="valore_logo.png" alt="Valore Logo">
@@ -37,9 +31,10 @@
       <section class="video-section">
         <h2 class="video-title">تفاصيل المشروع</h2>
         <div class="video-wrapper">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/M8bKEou2Fbs?si=s_5Fw3pO7zxT6Wk3&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/M8bKEou2Fbs?si=s_5Fw3pO7zxT6Wk3&amp;controls=0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         </div>
       </section>
+
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="IMG-1.jpg" alt="Slide 1" /></div>
@@ -58,7 +53,7 @@
     <div class="form-container">
       <span class="close-text" onclick="closePopup()">&times;</span>
       <h2>سجل بياناتك</h2>
-      <form action="https://formsubmit.co/kokowaheed10@gmail.com" method="POST">
+      <form id="leadForm">
         <input type="text" name="name" placeholder="الاسم الكامل" required>
         <input type="tel" name="phone" placeholder="رقم الهاتف" required>
         <input type="email" name="email" placeholder="البريد الإلكتروني" required>
@@ -73,89 +68,82 @@
     </div>
   </div>
 
-  <a class="whatsapp-button" href="https://wa.me/+201016761777" target="_blank" rel="noopener">
+  <a class="whatsapp-button" href="https://wa.me/+201016761777" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب">
   </a>
 
-  <script>
-    function openPopup() {
-      const popup = document.getElementById('popup');
-      popup.style.display = 'flex';
-      setTimeout(() => {
-        popup.classList.add('show');
-      }, 10);
-    }
-  
-    function closePopup() {
-      const popup = document.getElementById('popup');
-      popup.classList.remove('show');
-      setTimeout(() => {
-        popup.style.display = 'none';
-      }, 400);
-    }
-  
-    const images = document.querySelectorAll('.carousel img');
-    let currentIndex = Math.floor(images.length / 2); // الصورة اللي في النص
-  
-    function updateCarousel(direction = '') {
-  images.forEach((img, index) => {
-    img.classList.remove('active', 'slide-left', 'slide-right');
-    if (index === currentIndex) {
-      img.classList.add('active');
-      if (direction === 'right') {
-        img.classList.add('slide-right');
-      } else if (direction === 'left') {
-        img.classList.add('slide-left');
-      }
-    }
-  });
-}
-
-  
-function moveLeft() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateCarousel('left');
-}
-
-function moveRight() {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateCarousel('right');
-}
-  
-    // تشغيل أولي
-    updateCarousel();
-  
-    // تحريك تلقائي كل 4 ثواني
-    // setInterval(() => {
-    //   moveRight();
-    // }, 10000);
-  </script>
   <section class="bottom-form">
     <h2>سجل الآن</h2>
     <div class="bottom-content">
-      <form action="https://formspree.io/f/xgvkenwj" method="POST">
+      <form id="leadForm2">
         <input type="text" name="name" placeholder="الاسم الكامل" required>
         <input type="tel" name="phone" placeholder="رقم الهاتف" required>
         <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-       
+        <select name="unit_type" required>
+          <option value="">اختر نوع الوحدة</option>
+          <option value="1 Room">غرفة</option>
+          <option value="2 Room">غرفتين</option>
+          <option value="3 Room">3 غرف</option>
         </select>
         <button type="submit">إرسال</button>
       </form>
-  
+
       <div class="map-wrapper">
         <img src="Location.jpg" alt="خريطة المشروع" />
       </div>
-      
     </div>
   </section>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
   <script>
-    
     AOS.init();
+
+    function openPopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'flex';
+      setTimeout(() => popup.classList.add('show'), 10);
+    }
+
+    function closePopup() {
+      const popup = document.getElementById('popup');
+      popup.classList.remove('show');
+      setTimeout(() => popup.style.display = 'none', 400);
+    }
+
+    const form1 = document.getElementById("leadForm");
+    const form2 = document.getElementById("leadForm2");
+
+    function handleFormSubmit(form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = {
+          name: form.name.value,
+          phone: form.phone.value,
+          email: form.email.value,
+          unit_type: form.unit_type.value
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbwNlIeKCskK6qiG8kudTcIrwjVeTZ53kjKrjwL8pzWrQCdnCvNztvtYW8bUTVVByQjSMA/exec", {
+          method: "POST",
+          body: JSON.stringify(formData)
+        })
+        .then(res => {
+          alert("تم إرسال البيانات بنجاح!");
+          form.reset();
+          if (form === form1) closePopup();
+        })
+        .catch(err => {
+          alert("حصل خطأ أثناء إرسال البيانات");
+          console.error(err);
+        });
+      });
+    }
+
+    handleFormSubmit(form1);
+    handleFormSubmit(form2);
   </script>
-  
-  
 </body>
 </html>
