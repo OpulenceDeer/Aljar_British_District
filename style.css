@@ -19,6 +19,18 @@ body {
   object-fit: cover;
 }
 
+.Opulence_Deer_logo {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 5;
+}
+
+.Opulence_Deer_logo img {
+  height: 70px;
+  object-fit: cover;
+}
+
 .hero {
   background: url('BackGround.jpg') no-repeat center center/cover;
   height: 280vh;
