@@ -18,7 +18,7 @@ body {
   height: 60px;
   object-fit: cover;
 }
-
+/* 
 .Opulence_Deer_logo {
   position: absolute;
   top: 10px;
@@ -29,7 +29,7 @@ body {
 .Opulence_Deer_logo img {
   height: 70px;
   object-fit: cover;
-}
+} */
 
 .hero {
   background: url('BackGround.jpg') no-repeat center center/cover;
@@ -340,6 +340,19 @@ color: #000;
     height: 300px;
   }
 }
+/* 
+.Opulence_Deer_logo {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 5;
+}
+
+.Opulence_Deer_logo img {
+  height: 70px;
+  object-fit: cover;
+} */
+
 
 /* للموبايل */
 @media (max-width: 576px) {
@@ -375,6 +388,19 @@ color: #000;
     padding: 10px 16px;
     font-size: 1rem;
   }
+/*   
+.Opulence_Deer_logo {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 5;
+}
+
+.Opulence_Deer_logo img {
+  height: 60px;
+  object-fit: cover;
+} */
+
 
   .video-wrapper iframe {
     width: 100%;
